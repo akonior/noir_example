@@ -14,6 +14,10 @@ jobs:
           curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
           export PATH="$PATH:/home/runner/.nargo/bin:.nargo/bin/nargo"
           noirup -v 0.19.2
+      - name: Run compile
+        run: |
+          export PATH="$PATH:/home/runner/.nargo/bin:.nargo/bin/nargo"
+          nargo compile
       - name: Run prove
         run: |
           export PATH="$PATH:/home/runner/.nargo/bin:.nargo/bin/nargo"
