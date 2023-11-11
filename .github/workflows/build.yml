@@ -1,0 +1,20 @@
+name: CI
+
+on: ["push"]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install nargo
+        run: |
+          curl -L https://raw.githubusercontent.com/noir-lang/noirup/main/install | bash
+          export PATH="$PATH:/home/runner/.nargo/bin:.nargo/bin/nargo"
+          noirup -v 0.19.2
+      - name: Run prove
+        run: |
+          export PATH="$PATH:/home/runner/.nargo/bin:.nargo/bin/nargo"
+          nargo prove
