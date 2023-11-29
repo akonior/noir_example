@@ -1,5 +1,6 @@
-fn main(x: Field, y: pub Field) {
-     assert(x != y);
+fn main(x: Field, y: pub Field) -> pub u8 {
+     let a: [u8; 0] = [];
+     a[3]
  }
 
  #[test]
