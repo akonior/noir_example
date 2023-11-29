@@ -18,6 +18,10 @@ jobs:
         run: |
           export PATH="$PATH:/home/runner/.nargo/bin:.nargo/bin/nargo"
           nargo compile
+      - name: Run test
+        run: |
+            export PATH="$PATH:/home/runner/.nargo/bin:.nargo/bin/nargo"
+            nargo test
       - name: Run prove
         run: |
           export PATH="$PATH:/home/runner/.nargo/bin:.nargo/bin/nargo"
